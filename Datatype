@@ -1,0 +1,49 @@
+public class Datatype {
+    public static void intmethod() {
+        Integer i = 10;
+        System.debug(i);
+    }
+    
+    public static void longmethod(){
+        Long l = 4655235663464l;
+        System.debug(l);
+    }
+    
+    Public static void summethod(){
+        Integer a = 4647547;
+        Integer b = 677557;
+        integer c = a+b;
+        
+        System.debug (c);
+        
+    }
+    
+    Public static void strmethod(){
+        
+       String s ='abi';
+      System.debug(s);           
+    }
+    
+    Public static void dubmethod(){
+        Double dc = 36.89789;
+        System.debug(dc);
+    }
+    
+    Public static void datemethod(){
+       Date d = Date.newInstance(2000, 09, 17);
+        System.debug(d);
+    }
+    
+    Public static void decmethod(){
+        Decimal ab = 56.9878;
+           System.debug(ab);
+        
+        long l = ab.round();
+        System.debug(l);
+         }
+    
+    Public static void dtmethod(){
+        DateTime ab = DateTime.newInstance(2024, 12, 30, 12,20,23);
+        System.debug(ab);
+    }
+}
