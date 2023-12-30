@@ -3,3 +3,9 @@ public class sample {
         System.debug('Welcome');
     }
 }
+
+
+--------------------
+output
+
+Welcome
