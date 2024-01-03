@@ -1,0 +1,14 @@
+Set<Integer> stSet = new Set<Integer>();
+stSet.add(1);
+stSet.add(2);
+stSet.add(3);
+stSet.add(1);
+System.debug(stSet.contains(1));
+
+
+Set<Integer> stSet = new Set<Integer>();
+stSet.add(1);
+stSet.add(2);
+stSet.add(3);
+stSet.add(1);
+System.debug(stSet.size());
