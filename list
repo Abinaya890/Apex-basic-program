@@ -11,3 +11,13 @@ List<String> stList = new List<String>{'ABC','DEF','FGH'};
   System.debug(stList);
    stList.clear();
  System.debug(stList);
+
+
+
+List<account> cc = new List<account>();
+account ac = new account(); //instance
+ac.Name ='prasanth from ooty maple view resort';
+cc.add(ac);
+System.debug('accountlist-- '+cc);
+insert cc;
+System.debug('accountlist-- '+cc);
