@@ -1,0 +1,18 @@
+List<integer> age = new list<integer>{14};
+    if(age[0]>=18){
+        system.debug('eligible');
+       }
+else {
+    system.debug('not eligible');
+}
+
+
+List<integer> age = new list<integer>{14,25,12,34,21};
+    for(integer ac : age){
+    if(ac>=18){
+        system.debug('eligible ' +ac);
+       }
+else {
+    system.debug('not eligible ' +ac);
+}
+    }
