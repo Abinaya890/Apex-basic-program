@@ -1,0 +1,13 @@
+List<integer> sdc = new list<integer>();
+sdc.add(111);
+sdc.add(222);
+sdc.add(444);
+sdc.add(111);
+System.debug(type(sdc));
+
+
+List<String> stList = new List<String>{'ABC','DEF','FGH'};
+  stList.add('ABC');
+  System.debug(stList);
+   stList.clear();
+ System.debug(stList);
