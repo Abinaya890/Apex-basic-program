@@ -1,0 +1,5 @@
+map<integer, string> numbers = new map<integer,string>();
+numbers.put(11,'apple');
+numbers.put(12,'orange');
+numbers.put(13,'banana');
+system.debug('numbers' + numbers.keyset());
