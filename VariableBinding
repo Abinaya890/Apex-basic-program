@@ -1,0 +1,13 @@
+public class checkSOQLvariableBinding {
+
+    	public static void bindData(String acc)
+        {
+            String variablename = acc;
+
+			List<Account> accList = [SELECT Id,Name ,Phone FROM Account 
+                         WHERE Name =:variablename];
+
+			system.debug(accList);
+        }
+}
+checkSOQLvariableBinding.bindData('Express Logistics and Transport');
