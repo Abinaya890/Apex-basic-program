@@ -1,0 +1,12 @@
+public static void DmlUpdate()    
+    {
+		List<Account> updateList = [SELECT Name FROM Account WHERE Name LIKE 'Account from For Loop %'];        
+        for(Account a : updateList)
+        {
+            a.name  = a.name + 'Record ';
+                    
+        }
+        system.debug('updateList--'+updateList);
+        update updateList;
+
+    }
