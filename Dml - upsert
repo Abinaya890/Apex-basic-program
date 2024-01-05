@@ -1,0 +1,17 @@
+public class dmlExample {
+
+    
+    Public static void DmlUpsert()
+    {
+        List<Account> newAccountList = new List<Account>();
+        List<Account> ExAccountList = [SELECT Name FROM Account WHERE Name LIKE 'Account from For Loop %' ];
+        
+        for(Account ac : ExAccountList )
+        {
+            ac.Name = ' Upsert Record ';
+            newAccountList.add(ac);
+        }
+        
+        Account a = new Account();
+        a.Name = 'Upsert Record from Apex';
+        newAccountList.
