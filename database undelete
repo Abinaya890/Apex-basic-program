@@ -1,0 +1,8 @@
+public class databasedel {
+    public static void dbdelete(){
+         list<account> dc =[select name from account WHERE isDeleted=true ALL ROWS];
+           system.debug(dc);    
+        database.undelete(dc);
+        system.debug(dc);
+    }
+}
