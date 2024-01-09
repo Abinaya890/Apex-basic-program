@@ -1,0 +1,18 @@
+public class databaseupsert {
+
+    public static void dbupst(){
+        list<account> ac = new list<account>();
+        list<account> ad = [select name from account where name = 'chandran balu'];
+        for(account acc : ad){
+            acc.name = 'balu';
+            ac.add(acc);
+            system.debug(ac);
+        }
+        upsert ac;
+       account abi = new account();
+       abi.Name = 'apexclass';
+        ac.add(abi);
+        insert abi;
+        system.debug(ac);
+    }
+}
