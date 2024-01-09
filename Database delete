@@ -1,0 +1,6 @@
+public class databasedel {
+    public static void dbdelete(){
+         list<account> dc =[select name from account where name = 'database upsert'];
+        database.delete(dc);
+    }
+}
