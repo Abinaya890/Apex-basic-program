@@ -1,0 +1,10 @@
+trigger casetrigger on Case (before insert) {
+    for(case cs : trigger.new){
+if(cs.origin =='Email'){
+
+cs.status ='New';
+cs.priority ='Medium';
+}
+system.debug('trigger.new==' + cs);
+    }
+}
