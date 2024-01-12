@@ -1,0 +1,10 @@
+list<contact> cc = new list<contact>();
+    for(account ac : trigger.new){
+        contact cb = new contact();
+        cb.AccountId =ac.Id;
+        cb.LastName = ac.Name;
+        cc.add(cb);
+        
+        
+    }
+    insert cc; 
