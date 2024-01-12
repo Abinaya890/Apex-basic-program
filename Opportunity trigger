@@ -1,0 +1,13 @@
+    list<contact> cc = new list<contact>();
+ for(account ac : trigger.new)
+{
+if(ac.Industry == 'Banking'){
+  
+   contact cb = new contact();
+cb.Accountid = ac.id;
+cb.Lastname= ac.name;
+cb.phone= ac.phone;
+cc.add(cb);
+}
+}
+insert cc;
