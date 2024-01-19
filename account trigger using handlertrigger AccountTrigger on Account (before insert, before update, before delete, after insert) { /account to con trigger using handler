@@ -1,0 +1,28 @@
+trigger AccountTrigger on Account (before insert, before update, before delete, after insert) {
+
+    if(trigger.isAfter){
+    
+        if(trigger.isInsert){
+            accclass.afterInsertacc(trigger.new);
+        }
+    
+}
+}
+
+------------
+public class accclass {
+    public static void afterInsertacc(list<account> ac)
+    {
+        list<contact> conlist = new list<contact>();
+        
+        for(account ab : ac)
+        {
+            contact cc = new contact();
+            cc.AccountId= ab.Id;
+            cc.LastName= ab.name;
+            conlist.add(cc);
+        }  
+        system.debug(conlist);
+        insert conlist;
+    }
+}
