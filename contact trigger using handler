@@ -1,0 +1,47 @@
+trigger ContactTrigger on Contact (before insert, before update, before delete, after update) {
+    if(trigger.isBefore){
+        if(trigger.isInsert){
+        contactclass.beforeInsertcon(trigger.new);
+            }
+        else if(trigger.isUpdate){
+            contactclass.beforeUpdatecon(trigger.new);
+        }
+          else if(trigger.isDelete){
+            contactclass.beforeDeletecon(trigger.old);
+        }
+       }
+}
+
+
+
+----------------------------------
+  public class contactclass {
+    public static void beforeInsertcon(list<contact> ca){
+        for(contact cs : ca){
+            cs.LeadSource = 'Web';
+        }
+    }
+    public static void beforeUpdatecon(list<contact> ca){
+         for(contact cs : ca){
+             if(cs.LeadSource == 'Web'){
+                 cs.Level__c ='Primary';
+             }else if(cs.LeadSource == 'Phone Inquiry'){
+                 cs.Level__c ='Secondary';
+             }else if(cs.LeadSource == 'Purchased List'){
+                 cs.Level__c ='Tertiary';
+             }else{
+                 
+             }
+            
+        }
+    }
+    public static void beforeDeletecon(list<contact> ca){
+        for(contact cs : ca){
+              if(cs.LeadSource == 'Web'){
+                 cs.LeadSource.adderror('cannot delete web');
+        }
+    }
+}
+    
+    
+}
