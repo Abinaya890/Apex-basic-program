@@ -1,0 +1,19 @@
+trigger MobileTrigger on Mobile__c (after insert) {
+ List<Device__c> devupdate = new List<Device__c>();
+      Set<Id> mblId = new Set<Id>();
+     for (Mobile__c mb : Trigger.new) {
+        mblId.add(mb.Id);
+    }
+    List<Device__c> dev = [SELECT Id, Mobile__c,Description__c FROM Device__c WHERE Mobile__c IN :mblId];
+     for (Device__c dc : dev) {
+        for (Mobile__c mb : Trigger.new) {
+            if (mb.Description__c != null) {
+                dc.Description__c = mb.Description__c;
+                devupdate.add(dc);
+            }
+             update devupdate;
+        }
+    }
+
+
+}
