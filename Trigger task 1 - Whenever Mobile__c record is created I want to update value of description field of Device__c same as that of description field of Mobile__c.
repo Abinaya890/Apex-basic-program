@@ -1,5 +1,5 @@
-trigger MobileTrigger on Mobile__c (after insert) {
- List<Device__c> devupdate = new List<Device__c>();
+trigger MobileTrigger on Mobile__c (after insert, after update) {
+ //List<Device__c> devupdate = new List<Device__c>();
       Set<Id> mblId = new Set<Id>();
      for (Mobile__c mb : Trigger.new) {
         mblId.add(mb.Id);
@@ -9,9 +9,9 @@ trigger MobileTrigger on Mobile__c (after insert) {
         for (Mobile__c mb : Trigger.new) {
             if (mb.Description__c != null) {
                 dc.Description__c = mb.Description__c;
-                devupdate.add(dc);
+               // dev.add(dc);
             }
-             update devupdate;
+             update dev;
         }
     }
 
