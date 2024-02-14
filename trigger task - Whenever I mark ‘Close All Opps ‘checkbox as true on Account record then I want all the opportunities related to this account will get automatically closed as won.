@@ -1,0 +1,14 @@
+trigger AccountTrigger on Account (after insert, after update){
+    List<opportunity> op = new list<opportunity>();
+       
+      for (Account ac : Trigger.new) {
+          if(ac.Close_All_Opps__c == true){
+              List<Opportunity> ops =[SELECT Name,StageName,Id FROM Opportunity];
+              for(Opportunity opty : ops){
+                  opty.StageName = 'Closed Won';
+              op.add(opty);
+               }
+          }
+            update op;         
+      }
+    }
