@@ -1,0 +1,13 @@
+trigger Opptrigger on Opportunity (after insert, after update){
+    list<task> tsk = new list<task>();
+    for(Opportunity ops : Trigger.New){
+        
+        if(ops.StageName ==  'Closed Won'){
+            task tk = new task();
+            tk.Subject = 'Followup task ' + ops.Name;
+            tk.WhatId = ops.Id;
+            tsk.add(tk);
+        }
+        update tsk;
+    }
+}
