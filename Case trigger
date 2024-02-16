@@ -7,4 +7,4 @@ cs.priority ='Medium';
 }
 system.debug('trigger.new==' + cs);
     }
-}
+
