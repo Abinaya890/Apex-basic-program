@@ -2,7 +2,9 @@ public class del {
     public static void delmeth()
     {
         list<student__c> slist = [SELECT Name FROM student__c WHERE isDeleted=true ALL ROWS];
-            undelete slist;
+            undelete list;
+system.debug(slist);
+        
 
     }
 
