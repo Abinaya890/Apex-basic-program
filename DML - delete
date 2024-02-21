@@ -3,8 +3,6 @@ public class del {
     {
         list<student__c> slist = [SELECT Name FROM student__c WHERE isDeleted=true ALL ROWS];
             undelete list;
-system.debug(slist);
-        
 
     }
 
